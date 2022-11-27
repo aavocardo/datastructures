@@ -1,3 +1,8 @@
+import numpy as np
+
+
+def multiply(*args) -> int:
+    return int(np.prod(args))
 
 
 def binary_multiply(top: int = 1011, bottom: int = 1111) -> int:
@@ -18,9 +23,10 @@ def binary_multiply(top: int = 1011, bottom: int = 1111) -> int:
 
     print(results)
 
-    for results_ in range(len(results)):
-        dick = list(map(int, str(results[results_])))
-        print(dick)
+    # for results_ in range(len(results)):
+    #     dick = list(map(int, str(results[results_])))
+    #     if len(dick) == 2:
+
 
 
 
@@ -32,6 +38,7 @@ def binary_multiply(top: int = 1011, bottom: int = 1111) -> int:
 
 def main() -> None:
     binary_multiply(3579, 2468)
+
     # binary_multiply()
 
 
