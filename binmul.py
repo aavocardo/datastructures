@@ -23,9 +23,12 @@ def binary_multiply(top: int = 1011, bottom: int = 1111) -> int:
 
     print(results)
 
-    # for results_ in range(len(results)):
-    #     dick = list(map(int, str(results[results_])))
-    #     if len(dick) == 2:
+    for results_ in range(len(results)):
+        temp_a = list(map(int, str(results[results_])))
+        if len(temp_a) > 1:
+            print(temp_a)
+        else:
+            print(temp_a)
 
 
 
