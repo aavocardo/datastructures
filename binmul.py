@@ -6,7 +6,7 @@ def multiply(*args) -> int:
 
 
 def binary_multiply(top: int = 1011, bottom: int = 1111) -> int:
-    print(top * bottom)
+    print(f'{top} x {bottom} = {top * bottom}')
 
     results: list = []
     product: list = []
@@ -18,21 +18,13 @@ def binary_multiply(top: int = 1011, bottom: int = 1111) -> int:
     for bottom_ in range(1, len(bottom) + 1):
         for top_ in range(1, len(top) + 1):
             temp = list(map(int, str(bottom[-bottom_] * top[-top_])))
+            if len(temp) > 1:
+                remainder.append(temp[0])
+                temp.pop(0)
             print(temp)
+            print(remainder)
 
-    # print(results)
-    #
-    # for results_ in range(len(results)):
-    #     temp_a = list(map(int, str(results[results_])))
-    #     if len(temp_a) > 1:
-    #         remainder.append(temp_a[0])
-    #         temp_a.pop(0)
-    #         print(temp_a)
-
-    if top or bottom == 0:
-        return 0
-    else:
-        return sum(product)
+    return sum(product)
 
 
 def main() -> None:
