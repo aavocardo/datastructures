@@ -1,14 +1,13 @@
 import numpy as np
 
-
-def multiply(*args) -> int:
-    return int(np.prod(args))
+multiply = lambda *args: np.prod(args)  # NOQA: E731
+add = lambda *args: sum(args)  # NOQA: E731
 
 
 def binary_multiply(top: int = 1011, bottom: int = 1111) -> int:
     print(f'{top} x {bottom} = {top * bottom}')
 
-    results: list = []
+    # results: list = []
     product: list = []
     remainder: list = []
 
