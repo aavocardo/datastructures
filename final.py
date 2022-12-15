@@ -101,7 +101,6 @@ def graph(x: list, y: list, title) -> None:
     plt.ylabel('y')
     plt.grid()
     plt.show()
-    return None
 
 
 def main1():
