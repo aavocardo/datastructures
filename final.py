@@ -119,17 +119,14 @@ def main2():
     root.insert_left(9)
     # Right node input
     root.insert_right(3)
-
     stack.append(evaluate(root))
-    stack.pop()
+
+    result = eval('5+5*2-1/7')
 
     # Result
-    result = np.prod(stack)
+
     print(result)
 
-
-if __name__ == '__main__':
-    main1()
 
 if __name__ == '__main__':
     main2()
