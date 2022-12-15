@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 class Node:
@@ -7,6 +8,22 @@ class Node:
         self.val = val
         self.left = None
         self.right = None
+
+    def insert_left(self, data):
+        if self.left is None:
+            self.left = Node(data)
+        else:
+            new_node = Node(data)
+            new_node.left = self.left
+            self.left = new_node
+
+    def insert_right(self, data):
+        if self.right is None:
+            self.right = Node(data)
+        else:
+            new_node = Node(data)
+            new_node.right = self.right
+            self.right = new_node
 
 
 def evaluate(root):
@@ -78,16 +95,42 @@ def evaluate(root):
         return int(root.val)
 
 
-def main():
-    root = Node('!')
-    # input operator
-    root.left = Node(9)
-    root.right = Node(2)
-    # input values
-    result = evaluate(root)
-    # call evaluate function
+def graph(x: list, y: list, title) -> None:
+    plt.plot(x, y)
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.grid()
+    plt.show()
+    return None
+
+
+def main1():
+    x = [1, 2, 3, 4, 5]
+    y = [2, 3, 5, 9, 10]
+    graph(x, y, 'graph demo')
+
+
+def main2():
+    # Empty stack (FIFO)
+    stack = []
+
+    # Operator input
+    root = Node('*')
+    # Left node input
+    root.insert_left(9)
+    # Right node input
+    root.insert_right(3)
+
+    stack.append(evaluate(root))
+    stack.pop()
+
+    # Result
+    result = np.prod(stack)
     print(result)
 
 
 if __name__ == '__main__':
-    main()
+    main1()
+
+if __name__ == '__main__':
+    main2()

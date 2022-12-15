@@ -7,7 +7,7 @@ add = lambda *args: sum(args)  # NOQA: E731
 def binary_multiply(top: int = 1011, bottom: int = 1111) -> int:
     print(f'{top} x {bottom} = {top * bottom}')
 
-    # results: list = []
+    results: list = []
     product: list = []
     remainder: list = []
 
